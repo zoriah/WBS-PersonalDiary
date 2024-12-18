@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./index.css";
 import Newentry from "./components/NewEntry/Newentry";
 import Header from "./components/andwit/Header";
 import Footer from "./components/andwit/Footer";
+import "./index.css";
 
 function App() {
   return (
