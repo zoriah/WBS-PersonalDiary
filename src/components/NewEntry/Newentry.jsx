@@ -60,6 +60,11 @@ export default function Newentry() {
     <>
       <div id="NewEntry-Container" className="font-sour">
         <form action="" onSubmit={handleSubmit}>
+          <div id="control">
+            <button type="button" id="btnClose">
+              X
+            </button>
+          </div>
           <h2>New Entry</h2>
 
           <p>

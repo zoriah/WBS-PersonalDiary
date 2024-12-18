@@ -94,4 +94,33 @@ form {
       }
     }
   }
+  #btnClose {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    line-height:20px;
+    right: 1rem;
+    border: 0.2rem solid rgb(4, 71, 158);
+
+    background-color: rgb(6, 105, 180);
+    background-size: 200%;
+    background-image: linear-gradient(
+      to right,
+      rgba(6, 105, 180, 1) 10%,
+      rgba(88, 147, 192, 0.5) 50%,
+      rgba(6, 105, 180, 0.5) 90%
+    );
+
+    color: white;
+    background-position: 0% 100%;
+    transition: 0.3s all;
+    &:hover {
+      border: 0.2rem solid rgb(9, 44, 90);
+      background-position: 100% 0%;
+      box-shadow: 0.2rem 0.2rem 8px rgb(25, 27, 43);
+    }
+  }
 }
