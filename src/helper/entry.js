@@ -1,4 +1,4 @@
-class Entry {
+export class Entry {
   constructor(title, date, img_url, content) {
     this._title = title;
     this._date = date;
