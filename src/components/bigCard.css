@@ -1,0 +1,46 @@
+#modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  max-width: 50%;
+  min-width: 16rem;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+#modal-header-outer {
+  background-size: cover;
+  background-image: url("./Bunt.jpg");
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  background-color: aliceblue;
+}
+
+#modal-header {
+  height: 16rem;
+  margin-bottom: 1.75rem;
+  padding: 1.5rem;
+}
+
+#modal-content {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+#btnClose {
+  display: flex;
+  justify-self: flex-end;
+  padding-right: 0.75rem;
+  font-size: 1.5rem;
+}

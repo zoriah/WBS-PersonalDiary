@@ -1,12 +1,11 @@
 import { useState } from "react";
+import Bigcard from "./components/Bigcard";
 import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1 className={"p-64"}>GR1</h1>
+      <Bigcard />
     </>
   );
 }
