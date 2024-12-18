@@ -10,7 +10,7 @@ export default function Newentry() {
     // img_url: "http://www.example.com",
     // content: "Auch im nächsten Jahr sind Steuern Raub.",
     title: "",
-    date: 0,
+    date: new Date().getTime(),
     img_url: "",
     content: "",
 
