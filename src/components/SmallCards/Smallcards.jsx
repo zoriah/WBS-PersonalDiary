@@ -1,45 +1,25 @@
+import { getAll } from "../../helper/localStorageHelper";
 import "./smallcards.css";
+import { useEffect } from "react";
 
+export default function Smallcards({ handleSCClick, setTempId, onSendData }) {
+  const smallCards = getAll();
 
+  useEffect(() => {}, []);
 
-export default function Smallcards() {
-  const smallCards = [
-    {
-      title: "card1",
-      date: new Date(),
-      time: new Date(),
-     
-    },
-    {
-      title: "card2",
-      date: new Date(),
-      
-    },
-    {
-      title: "card3",
-      date: new Date(),
-    },
-    {
-      title: "card4",
-      date: new Date(),
-    },
-    {
-      title: "card5",
-      date: new Date(),
-    },
-    {
-      title: "card6",
-      date: new Date(),
-    },
-  ];
   return (
     <div id="modal-container">
       {smallCards.map((card, index) => {
         return (
-          <div key={index} id="card">
+          <div
+            onClick={() => onSendData(card.saveDate)} //onSendData
+            key={index}
+            savedate={card.saveDate}
+            id="card"
+          >
             <div id="card-title">{card.title}</div>
             <div id="card-date">
-              {card.date.toLocaleString("de-DE", {
+              {card.saveDate.toLocaleString("de-DE", {
                 dateStyle: "long",
               })}
             </div>
