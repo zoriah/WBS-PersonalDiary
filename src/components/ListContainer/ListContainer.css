@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#entry-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  background-color: green;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  border: 4px solid rgb(6, 105, 180);
+  border-radius: 2rem;
+  box-shadow: 1rem 1rem 12px rgb(48, 51, 83);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}

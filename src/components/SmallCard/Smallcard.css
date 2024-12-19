@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#small-card {
+  position: relative;
+  background-color: pink;
+  background-image: url("https://picsum.photos/800/600");
+  background-size: 120% 120%;
+  background-repeat: no-repeat;
+
+  min-height: 20rem;
+  min-width: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0.5rem 0.5rem 1rem black;
+
+  transition: 0.3s all;
+
+  &:hover {
+    background-size: 100% 100%;
+    box-shadow: 0.5rem 0.5rem 2rem black;
+    transition: 0.3s all;
+
+    #card-title {
+      top: 0;
+    }
+  }
+
+  #card-title {
+    position: absolute;
+    top: -2.5rem;
+    left: 0rem;
+    right: 0;
+    height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    text-align: center;
+    transition: 0.3s all;
+  }
+
+  #card-date {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2.5rem;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    text-align: center;
+  }
+}

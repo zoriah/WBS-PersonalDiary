@@ -19,7 +19,7 @@ export default function Newentry() {
       const year = temp.getFullYear();
       const month = (temp.getMonth() + 1).toString().padStart(2, "0");
       const day = temp.getDate().toString().padStart(2, "0");
-      console.log(`${year}-${month}-${day}`);
+
       return `${year}-${month}-${day}`;
     },
 
@@ -58,7 +58,7 @@ export default function Newentry() {
 
   return (
     <>
-      <div id="NewEntry-Container" className="font-sour">
+      <div id="NewEntry-Container" className="hide font-sour">
         <form action="" onSubmit={handleSubmit}>
           <div id="control">
             <button type="button" id="btnClose">

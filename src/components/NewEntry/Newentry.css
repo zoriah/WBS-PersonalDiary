@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 #NewEntry-Container {
-  /* &.hide {
+  &.hide {
     display: none;
-  } */
+  }
   position: absolute;
   display: flex;
   justify-content: center;
@@ -101,7 +101,7 @@ form {
     height: 40px;
     border-radius: 100%;
     font-size: 1.5rem;
-    line-height:20px;
+    line-height: 20px;
     right: 1rem;
     border: 0.2rem solid rgb(4, 71, 158);
 
