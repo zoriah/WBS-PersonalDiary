@@ -1,4 +1,4 @@
-import Smallcard from "../SmallCard/Smallcard.jsx";
+import Smallcards from "../SmallCards/Smallcards.jsx";
 import entries from "../../helper/entry.js";
 import "./ListContainer.css";
 
@@ -12,7 +12,7 @@ export default function Listcontainer() {
       <div id="entry-list">
         {arrEntries.map((entry, index) => {
           return (
-            <Smallcard key={` card_${index}`} index={index} entry={entry} />
+            <Smallcards key={` card_${index}`} index={index} entry={entry} />
           );
         })}
       </div>
