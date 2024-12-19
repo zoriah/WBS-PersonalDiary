@@ -2,24 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-#small-card {
+#card {
   position: relative;
   background-color: pink;
   background-image: url("https://picsum.photos/800/600");
   background-size: 120% 120%;
   background-repeat: no-repeat;
 
-  min-height: 20rem;
-  min-width: 300px;
+  min-height: 300px;
+  min-width: 400px;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0.5rem 0.5rem 1rem black;
+  box-shadow: 0.2rem 0.2rem 1rem black;
+  cursor: pointer;
 
   transition: 0.3s all;
 
   &:hover {
     background-size: 100% 100%;
-    box-shadow: 0.5rem 0.5rem 2rem black;
+    box-shadow: 0.2rem 0.2rem 2rem black;
     transition: 0.3s all;
 
     #card-title {
