@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    colors: {
-
+    fontFamily: {
+      sour: ["Sour Gummy", "sans-serif"],
     },
-    extend: {},
+    colors: {},
+    extend: {
+    },
   },
   plugins: [],
-}
-
+};

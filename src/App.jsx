@@ -1,12 +1,18 @@
 import { useState } from "react";
+import Newentry from "./components/NewEntry/Newentry";
+import Header from "./components/andwit/Header";
+import Footer from "./components/andwit/Footer";
 import "./index.css";
+import Listcontainer from "./components/ListContainer/ListContainer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1 className={"p-64"}>GR1</h1>
+      <Header />
+      <Newentry />
+      {/* BIGCARD */}
+      <Listcontainer />
+      <Footer />
     </>
   );
 }
