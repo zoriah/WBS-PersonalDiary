@@ -1,46 +1,33 @@
-import Smallcards from "../SmallCards/Smallcards.jsx";
-import "./ListContainer.css";
-import { getById, getAll } from "../../helper/localStorageHelper";
 import { useState } from "react";
-export default function Listcontainer({ setTempId }) {
-  const entries = getAll();
+import Smallcards from "../SmallCard/SmallCard.jsx";
+import { getAll } from "../../helper/localStorageHelper.js";
+import "./ListContainer.css";
 
-  const [id, setId] = useState(-1);
-  console.log(id);
-
-  // Callback
-  const handleData = (id) => {
-    setId(id);
-  };
-
-  const handleSCClick = (e) => {
-    e.preventDefault();
-    console.log(e.target.saveDate);
-  };
-
-  // useEffect(() => {
-  //   return () => {};
-  // }, []);
+export default function ListContainer({ onCardClick, onNewEntryClick }) {
+  function handleOpenEntryClick() {
+    onNewEntryClick();
+  }
 
   return (
-    <div id="list-container">
-      <div id="control">
-        <button>Add new Entry</button>
+    <main id="content-container">
+      <div>
+        <div id="control-row">
+          <button onClick={handleOpenEntryClick}>Add new Entry</button>
+        </div>
+        <div id="list-container">
+          {getAll().map((value, index) => {
+            return (
+              <Smallcards
+                key={`card_${index}`}
+                index={index}
+                cardData={value}
+                id={value.saveDate}
+                onCardClick={onCardClick}
+              />
+            );
+          })}
+        </div>
       </div>
-      <div id="entry-list">
-        {entries.map((entry, index) => {
-          return (
-            <Smallcards
-              onSendData={handleData} //handleData wird zu onSendData
-              setTempId={setTempId}
-              handleSCClick={handleSCClick}
-              key={` card_${index}`}
-              index={index}
-              entry={entry}
-            />
-          );
-        })}
-      </div>
-    </div>
+    </main>
   );
 }

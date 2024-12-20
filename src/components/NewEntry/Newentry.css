@@ -2,79 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-#NewEntry-Container {
-  &.hide {
-    display: none;
-  }
+#mainNewEntry {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 0 2rem;
+  margin-top: 4rem;
+  height: 100vh;
+  width: 100vw;
 }
 
-form {
-  *:active,
-  *:focus {
-    outline: none;
-  }
+#newEntry-Container {
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.2);
 
-  position: relative;
-  max-width: 600px;
-  width: 100%;
-  border-radius: 1rem;
-  border: 4px solid rgb(6, 105, 180);
-  box-shadow: 1rem 1rem 12px rgb(48, 51, 83);
-  padding: 1rem 2rem;
-  margin: 0 auto;
-
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  p {
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-
-    label {
-      user-select: none;
-      padding: 0.2rem 0 0.2rem 0.5rem;
-      letter-spacing: 1px;
+  form {
+    *:active,
+    *:focus {
+      outline: none;
     }
 
-    input {
-      user-select: all;
-      padding: 0.5rem 1rem 0.5rem 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 4px 4px 8px rgba(65, 65, 65, 1) !important;
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 1rem;
+    border: 4px solid rgb(6, 105, 180);
+    box-shadow: 1rem 1rem 12px rgb(48, 51, 83);
+    padding: 1rem 2rem;
+    margin: 0 auto;
+
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
     }
 
-    textarea {
-      user-select: text;
-      resize: none;
-      padding: 0.5rem 1rem 0.5rem 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 4px 4px 8px rgba(65, 65, 65, 1) !important;
+    p {
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem;
+
+      label {
+        user-select: none;
+        padding: 0.2rem 0 0.2rem 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      input {
+        user-select: all;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 4px 4px 8px rgba(65, 65, 65, 1) !important;
+      }
+
+      textarea {
+        user-select: text;
+        resize: none;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 4px 4px 8px rgba(65, 65, 65, 1) !important;
+      }
+
+      #btnAddEntry {
+        max-width: 200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        background-color: rgb(6, 105, 180);
+        background-size: 200%;
+        border: 0.2rem solid rgb(4, 71, 158);
+
+        background-image: linear-gradient(
+          to right,
+          rgba(6, 105, 180, 1) 10%,
+          rgba(88, 147, 192, 0.5) 50%,
+          rgba(6, 105, 180, 0.5) 90%
+        );
+
+        color: white;
+        border-radius: 1rem 2rem;
+        background-position: 0% 100%;
+        transition: 0.3s all;
+
+        &:hover {
+          border: 0.2rem solid rgb(9, 44, 90);
+          background-position: 100% 0%;
+          box-shadow: 0.2rem 0.2rem 8px rgb(25, 27, 43);
+        }
+      }
     }
 
-    button {
-      max-width: 200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
+    #btnClose {
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      font-size: 1.5rem;
+      line-height: 20px;
+      right: 1rem;
+      border: 0.2rem solid rgb(4, 71, 158);
+      padding: 0;
+
       background-color: rgb(6, 105, 180);
       background-size: 200%;
-      border: 0.2rem solid rgb(4, 71, 158);
-
       background-image: linear-gradient(
         to right,
         rgba(6, 105, 180, 1) 10%,
@@ -83,44 +117,13 @@ form {
       );
 
       color: white;
-      border-radius: 1rem 2rem;
       background-position: 0% 100%;
       transition: 0.3s all;
-
       &:hover {
         border: 0.2rem solid rgb(9, 44, 90);
         background-position: 100% 0%;
         box-shadow: 0.2rem 0.2rem 8px rgb(25, 27, 43);
       }
-    }
-  }
-  #btnClose {
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    font-size: 1.5rem;
-    line-height: 20px;
-    right: 1rem;
-    border: 0.2rem solid rgb(4, 71, 158);
-
-    background-color: rgb(6, 105, 180);
-    background-size: 200%;
-    background-image: linear-gradient(
-      to right,
-      rgba(6, 105, 180, 1) 10%,
-      rgba(88, 147, 192, 0.5) 50%,
-      rgba(6, 105, 180, 0.5) 90%
-    );
-
-    color: white;
-    background-position: 0% 100%;
-    transition: 0.3s all;
-    &:hover {
-      border: 0.2rem solid rgb(9, 44, 90);
-      background-position: 100% 0%;
-      box-shadow: 0.2rem 0.2rem 8px rgb(25, 27, 43);
     }
   }
 }

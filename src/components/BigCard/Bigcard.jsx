@@ -1,33 +1,77 @@
 import { useState } from "react";
-import "./bigCard.css";
+import "./BigCard.css";
 
-function Bigcard({ entrieId }) {
+export default function BigCard({ cardId, onCloseClick }) {
   const [entries, setEntries] = useState(-1);
-  console.log("Bigcard: " + entrieId);
+
+  const handleCloseClick = () => {
+    onCloseClick();
+    console.log("close BigCard");
+  };
+
+  console.log("BigCard: " + cardId);
   // console.log(entries);
   return (
-    <div id="modal-container">
-      <div className="overflow-hidden" id="modal">
-        <div id="modal-header-outer">
-          <img src="" alt="" />
-          <div className="bg-[#ffffff]">
-            <button id="btnClose">&times;</button>
-          </div>
-          <div id="modal-header">
-            <h1 className="text-3xl font-bold">{entries.title}</h1>
-            <p className="pt-2">{entries.actualDate}</p>
-          </div>
+    <main>
+      <div id="bigCard">
+        <div id="bigCard-control">
+          <button id="btnClose" onClick={onCloseClick}>
+            X
+          </button>
         </div>
-        <div id="modal-content">
-          <p>{entries.message}</p>
+
+        <div id="bigCard-image">
+          <img src="https://picsum.photos/800/600" alt="" />
         </div>
-        <div id="modal-footer">
-          {/* <button id="btn-sub">submit</button>
-          <button id="btn-can">cancel</button> */}
+
+        <div id="bigCard-title">
+          <h1>Test im Frühling{entries.title}</h1>
+          <p id="bigCard-subtitle">20.12.2024{entries.actualDate}</p>
+        </div>
+
+        <div id="bigCard-message">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
+            magnam repudiandae eius labore! Officiis voluptatem consectetur,
+            voluptatibus dolor placeat voluptates et amet eos, magni praesentium
+            iste eaque doloribus tempore? Similique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Veniam magnam repudiandae eius labore!
+            Officiis voluptatem consectetur, voluptatibus dolor placeat
+            voluptates et amet eos, magni praesentium iste eaque doloribus
+            tempore? Similique. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Veniam magnam repudiandae eius labore! Officiis
+            voluptatem consectetur, voluptatibus dolor placeat voluptates et
+            amet eos, magni praesentium iste eaque doloribus tempore? Similique.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
+            magnam repudiandae eius labore! Officiis voluptatem consectetur,
+            voluptatibus dolor placeat voluptates et amet eos, magni praesentium
+            iste eaque doloribus tempore? Similique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Veniam magnam repudiandae eius labore!
+            Officiis voluptatem consectetur, voluptatibus dolor placeat
+            voluptates et amet eos, magni praesentium iste eaque doloribus
+            tempore? Similique. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Veniam magnam repudiandae eius labore! Officiis
+            voluptatem consectetur, voluptatibus dolor placeat voluptates et
+            amet eos, magni praesentium iste eaque doloribus tempore? Similique.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
+            magnam repudiandae eius labore! Officiis voluptatem consectetur,
+            voluptatibus dolor placeat voluptates et amet eos, magni praesentium
+            iste eaque doloribus tempore? Similique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Veniam magnam repudiandae eius labore!
+            Officiis voluptatem consectetur, voluptatibus dolor placeat
+            voluptates et amet eos, magni praesentium iste eaque doloribus
+            tempore? Similique. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Veniam magnam repudiandae eius labore! Officiis
+            voluptatem consectetur, voluptatibus dolor placeat voluptates et
+            amet eos, magni praesentium iste eaque doloribus tempore? Similique.
+            {entries.message}
+          </p>
+        </div>
+
+        <div id="bigCard-footer">
+          <button onClick={onCloseClick}>close</button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
-
-export default Bigcard;

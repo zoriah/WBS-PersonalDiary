@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 body {
+  position: relative;
   background-color: lightblue;
   background-image: url("./src/img/texture2.jpg");
   background-blend-mode: overlay;
+  margin: 0;
+  padding: 0;
 }
