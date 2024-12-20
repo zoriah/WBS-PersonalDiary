@@ -17,6 +17,19 @@ export default function NewEntry({ onCloseClick }) {
     message: "",
   });
 
+  const handleValueChange = (e) => {
+    const { name, value } = e.target;
+    setEntry((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  //   const handleChange = e => {
+  //     const { name, value } = e.target;
+  //     setState(prevState => ({
+  //         ...prevState,
+  //         [name]: value
+  //     }));
+  // };
+
   const handleCloseClick = () => {
     onCloseClick();
     console.log("close NewEntry");
@@ -24,9 +37,7 @@ export default function NewEntry({ onCloseClick }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //Baustelle hier
-    // setEntry()
-    saveEntry(formData);
+    saveEntry(entry);
     onCloseClick();
   };
 
@@ -50,6 +61,7 @@ export default function NewEntry({ onCloseClick }) {
                 type="text"
                 placeholder="Title"
                 value={entry.title}
+                onChange={handleValueChange}
                 required
               />
             </p>
@@ -62,6 +74,7 @@ export default function NewEntry({ onCloseClick }) {
                 type="date"
                 placeholder="Date"
                 value={entry.entryDate}
+                onChange={handleValueChange}
                 required
               />
             </p>
@@ -74,6 +87,7 @@ export default function NewEntry({ onCloseClick }) {
                 type="url"
                 placeholder="Image URL"
                 value={entry.imgUrl}
+                onChange={handleValueChange}
                 required
               />
             </p>
@@ -87,6 +101,7 @@ export default function NewEntry({ onCloseClick }) {
                 cols="10"
                 rows="5"
                 value={entry.message}
+                onChange={handleValueChange}
                 required
               ></textarea>
             </p>
