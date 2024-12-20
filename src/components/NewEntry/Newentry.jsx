@@ -22,14 +22,6 @@ export default function NewEntry({ onCloseClick }) {
     setEntry((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  //   const handleChange = e => {
-  //     const { name, value } = e.target;
-  //     setState(prevState => ({
-  //         ...prevState,
-  //         [name]: value
-  //     }));
-  // };
-
   const handleCloseClick = () => {
     onCloseClick();
     console.log("close NewEntry");
